@@ -1,0 +1,56 @@
+{
+  "name": "SystemAPI",
+  "version": "1.0.0",
+  "description": "APi for all codify management systems",
+  "main": "SystemAPI.js",
+  "scripts": {
+    "development": "nodemon SystemAPI.ts",
+    "production": "rm -rf build && tsc --outDir build && sudo pm2 start ./SystemAPI.js && sudo pm2 save",
+    "production-restart": "rm -rf build && tsc --outDir build && sudo pm2 restart SystemAPI && sudo pm2 save",
+    "build": "rm -rf build && tsc --outDir build",
+    "migrate": "npx ts-node ./models/CoreMigration.ts",
+    "testModule": "npx ts-node ./TestModule.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "..."
+  },
+  "author": "Codify Central",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/cors": "^2.8.12",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.14",
+    "@types/express-useragent": "^1.0.2",
+    "@types/log4js": "^2.3.5",
+    "@types/mailparser": "^3.4.0",
+    "@types/md5": "^2.3.2",
+    "@types/mysql": "^2.15.21",
+    "@types/node": "^18.7.18",
+    "@types/node-imap": "^0.9.0",
+    "@types/nodemailer": "^6.4.6",
+    "@types/socket.io": "^3.0.2",
+    "axios": "^0.27.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "express-useragent": "^1.0.15",
+    "log4js": "^6.7.0",
+    "mailparser": "^3.5.0",
+    "md5": "^2.3.0",
+    "mysql": "^2.18.1",
+    "node-imap": "^0.9.6",
+    "nodemailer": "^6.7.8",
+    "nodemon": "^2.0.20",
+    "socket.io": "^4.5.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.3"
+  },
+  "dependencies": {
+    "@types/multer": "^1.4.7",
+    "@types/uuid": "^9.0.0",
+    "multer": "^1.4.5-lts.1",
+    "uuid": "^9.0.0"
+  }
+}
